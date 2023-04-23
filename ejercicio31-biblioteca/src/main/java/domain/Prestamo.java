@@ -20,13 +20,20 @@ public class Prestamo {
   }
 
   public long calcularDiasDeMultas(){
-
     Duration duration = Duration.between(fechaDeVencimiento, fechaDevolucion);
     return duration.toDays() * 2;
   }
 
-  public boolean solicitar(){
+  public void finalizarPrestamo(){
+    copia.cambiarEstado(Estado.BIBLIOTECA);
+    if(fechaDevolucion.isAfter(fechaDeVencimiento)){
+      lector.aplicarMulta(fechaDevolucion, calcularDiasDeMultas());
+    }
+  }
 
-    return false;
+  // esto se ejecutaría en un cron en la fecha de vencimiento
+  public void vencido(){
+    copia.cambiarEstado(Estado.RETRASO);
+    lector.setHabilitado(false);
   }
 }

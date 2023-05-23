@@ -7,6 +7,10 @@ public class Multa {
   private LocalDateTime fechaFinalizacionMulta;
   private LocalDateTime fechaAplicadaMulta;
 
+  public LocalDateTime getFechaFinalizacionMulta() {
+    return fechaFinalizacionMulta;
+  }
+
   public Multa(LocalDateTime fechaAplicadaMulta, long diasMultado) {
     this.fechaAplicadaMulta = fechaAplicadaMulta;
     this.fechaFinalizacionMulta = fechaAplicadaMulta.plusDays(diasMultado);

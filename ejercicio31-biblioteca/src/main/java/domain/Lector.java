@@ -46,4 +46,8 @@ public class Lector {
     return this.multa != null;
   }
 
+  public Multa getMulta() {
+    return multa;
+  }
+
 }

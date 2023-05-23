@@ -19,6 +19,10 @@ public class Prestamo {
     this.lector = lector;
   }
 
+  public Lector getLector() {
+    return lector;
+  }
+
   public long calcularDiasDeMultas(){
     Duration duration = Duration.between(fechaDeVencimiento, fechaDevolucion);
     return duration.toDays() * 2;

@@ -8,6 +8,4 @@ public class Libro {
   private List<Autor> autores;
   private int año;
   private String editorial;
-
-
 }
